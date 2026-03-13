@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode build files
+DerivedData/
+build/
+
+# User settings
+xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Firebase
+GoogleService-Info.plist
