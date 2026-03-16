@@ -16,6 +16,12 @@
 		57D57C9B2F64239600C9A995 /* MyClassHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D57C9A2F64239600C9A995 /* MyClassHubUITestsLaunchTests.swift */; };
 		57D57CA82F6426A800C9A995 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57D57CA72F6426A700C9A995 /* GoogleService-Info.plist */; };
 		57D57CAC2F64303A00C9A995 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57D57CAB2F64303900C9A995 /* .gitignore */; };
+		57D6AA1E2F684A5C00B1D644 /* Batchmate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA1D2F684A5C00B1D644 /* Batchmate.swift */; };
+		57D6AA202F684A9A00B1D644 /* BatchmateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA1F2F684A9A00B1D644 /* BatchmateService.swift */; };
+		57D6AA222F684B0F00B1D644 /* BatchmateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA212F684B0F00B1D644 /* BatchmateViewModel.swift */; };
+		57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA232F684B4900B1D644 /* MyBatchmatesView.swift */; };
+		57D6AA262F684B8700B1D644 /* BatchmateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA252F684B8700B1D644 /* BatchmateCardView.swift */; };
+		57D6AA282F684BB800B1D644 /* BatchmateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */; };
 		57E034952F68133000282168 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 57E034942F68133000282168 /* FirebaseAuth */; };
 		57E034972F68133000282168 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 57E034962F68133000282168 /* FirebaseFirestore */; };
 		57E034992F68133000282168 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 57E034982F68133000282168 /* FirebaseMessaging */; };
@@ -68,6 +74,12 @@
 		57D57C9A2F64239600C9A995 /* MyClassHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		57D57CA72F6426A700C9A995 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57D57CAB2F64303900C9A995 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		57D6AA1D2F684A5C00B1D644 /* Batchmate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batchmate.swift; sourceTree = "<group>"; };
+		57D6AA1F2F684A9A00B1D644 /* BatchmateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchmateService.swift; sourceTree = "<group>"; };
+		57D6AA212F684B0F00B1D644 /* BatchmateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchmateViewModel.swift; sourceTree = "<group>"; };
+		57D6AA232F684B4900B1D644 /* MyBatchmatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBatchmatesView.swift; sourceTree = "<group>"; };
+		57D6AA252F684B8700B1D644 /* BatchmateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchmateCardView.swift; sourceTree = "<group>"; };
+		57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchmateDetailView.swift; sourceTree = "<group>"; };
 		57E0349D2F6814C900282168 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		57E034A02F6814FD00282168 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		57E034A32F6815CF00282168 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 			children = (
 				57E0349D2F6814C900282168 /* User.swift */,
 				57E8B1002F683A1A000C4E1D /* Teacher.swift */,
+				57D6AA1D2F684A5C00B1D644 /* Batchmate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +204,7 @@
 			children = (
 				57E034A02F6814FD00282168 /* AuthService.swift */,
 				57E8B1022F683A4B000C4E1D /* TeacherService.swift */,
+				57D6AA1F2F684A9A00B1D644 /* BatchmateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 			children = (
 				57E034A32F6815CF00282168 /* AuthViewModel.swift */,
 				57E8B1042F683AC4000C4E1D /* TeacherViewModel.swift */,
+				57D6AA212F684B0F00B1D644 /* BatchmateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				57E034AE2F6817EB00282168 /* LoadingView.swift */,
+				57D6AA252F684B8700B1D644 /* BatchmateCardView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -249,6 +265,8 @@
 				57E8B1062F683B18000C4E1D /* OurTeachersView.swift */,
 				57E8B1082F683B91000C4E1D /* TeacherRowView.swift */,
 				57E8B10A2F683BD9000C4E1D /* TeacherDetailView.swift */,
+				57D6AA232F684B4900B1D644 /* MyBatchmatesView.swift */,
+				57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -396,8 +414,10 @@
 			files = (
 				57E8B1072F683B19000C4E1D /* OurTeachersView.swift in Sources */,
 				57E034A42F6815CF00282168 /* AuthViewModel.swift in Sources */,
+				57D6AA262F684B8700B1D644 /* BatchmateCardView.swift in Sources */,
 				57E034AA2F68175400282168 /* LoginView.swift in Sources */,
 				57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */,
+				57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */,
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
@@ -405,11 +425,15 @@
 				57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */,
 				57E034A72F68163400282168 /* RootView.swift in Sources */,
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
+				57D6AA202F684A9A00B1D644 /* BatchmateService.swift in Sources */,
+				57D6AA222F684B0F00B1D644 /* BatchmateViewModel.swift in Sources */,
 				57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
+				57D6AA282F684BB800B1D644 /* BatchmateDetailView.swift in Sources */,
 				57E034A12F6814FD00282168 /* AuthService.swift in Sources */,
+				57D6AA1E2F684A5C00B1D644 /* Batchmate.swift in Sources */,
 				57E8B10B2F683BD9000C4E1D /* TeacherDetailView.swift in Sources */,
 				57E034AF2F6817EB00282168 /* LoadingView.swift in Sources */,
 			);

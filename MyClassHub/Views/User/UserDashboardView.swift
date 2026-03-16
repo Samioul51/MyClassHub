@@ -111,13 +111,13 @@ struct UserDashboardView: View {
         case "Our Teachers":
             OurTeachersView()
         case "My Batchmates":
-            Text("My Batchmates - Coming Soon")
+            MyBatchmatesView()
         case "Routine":
-            Text("Routine - Coming Soon")
+            Text("Routine")
         case "Notices":
-            Text("Notices - Coming Soon")
+            Text("Notices")
         default:
-            Text("Coming Soon")
+            Text("default")
         }
     }
 
