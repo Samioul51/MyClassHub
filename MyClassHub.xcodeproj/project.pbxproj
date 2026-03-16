@@ -30,6 +30,12 @@
 		57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B12F68197C00282168 /* AdminDashboardView.swift */; };
 		57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B42F6819A000282168 /* UserDashboardView.swift */; };
 		57E034B72F68262C00282168 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B62F68262C00282168 /* SettingsView.swift */; };
+		57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B1002F683A1A000C4E1D /* Teacher.swift */; };
+		57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B1022F683A4B000C4E1D /* TeacherService.swift */; };
+		57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B1042F683AC4000C4E1D /* TeacherViewModel.swift */; };
+		57E8B1072F683B19000C4E1D /* OurTeachersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B1062F683B18000C4E1D /* OurTeachersView.swift */; };
+		57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B1082F683B91000C4E1D /* TeacherRowView.swift */; };
+		57E8B10B2F683BD9000C4E1D /* TeacherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B10A2F683BD9000C4E1D /* TeacherDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,12 @@
 		57E034B12F68197C00282168 /* AdminDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardView.swift; sourceTree = "<group>"; };
 		57E034B42F6819A000282168 /* UserDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardView.swift; sourceTree = "<group>"; };
 		57E034B62F68262C00282168 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		57E8B1002F683A1A000C4E1D /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		57E8B1022F683A4B000C4E1D /* TeacherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherService.swift; sourceTree = "<group>"; };
+		57E8B1042F683AC4000C4E1D /* TeacherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewModel.swift; sourceTree = "<group>"; };
+		57E8B1062F683B18000C4E1D /* OurTeachersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurTeachersView.swift; sourceTree = "<group>"; };
+		57E8B1082F683B91000C4E1D /* TeacherRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRowView.swift; sourceTree = "<group>"; };
+		57E8B10A2F683BD9000C4E1D /* TeacherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				57E0349D2F6814C900282168 /* User.swift */,
+				57E8B1002F683A1A000C4E1D /* Teacher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				57E034A02F6814FD00282168 /* AuthService.swift */,
+				57E8B1022F683A4B000C4E1D /* TeacherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				57E034A32F6815CF00282168 /* AuthViewModel.swift */,
+				57E8B1042F683AC4000C4E1D /* TeacherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,6 +246,9 @@
 			children = (
 				57E034B42F6819A000282168 /* UserDashboardView.swift */,
 				57E034B62F68262C00282168 /* SettingsView.swift */,
+				57E8B1062F683B18000C4E1D /* OurTeachersView.swift */,
+				57E8B1082F683B91000C4E1D /* TeacherRowView.swift */,
+				57E8B10A2F683BD9000C4E1D /* TeacherDetailView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -376,17 +394,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E8B1072F683B19000C4E1D /* OurTeachersView.swift in Sources */,
 				57E034A42F6815CF00282168 /* AuthViewModel.swift in Sources */,
 				57E034AA2F68175400282168 /* LoginView.swift in Sources */,
 				57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */,
+				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
+				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
+				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
 				57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */,
 				57E034A72F68163400282168 /* RootView.swift in Sources */,
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
+				57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
 				57E034A12F6814FD00282168 /* AuthService.swift in Sources */,
+				57E8B10B2F683BD9000C4E1D /* TeacherDetailView.swift in Sources */,
 				57E034AF2F6817EB00282168 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

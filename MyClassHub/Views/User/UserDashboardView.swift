@@ -56,12 +56,14 @@ struct UserDashboardView: View {
                             spacing: 16
                         ) {
                             ForEach(menuItems, id: \.title) { item in
-                                MenuCard(
-                                    title: item.title,
-                                    subtitle: item.subtitle,
-                                    icon: item.icon,
-                                    color: item.color
-                                )
+                                NavigationLink(destination: destinationView(for: item.title)) {
+                                        MenuCard(
+                                            title: item.title,
+                                            subtitle: item.subtitle,
+                                            icon: item.icon,
+                                            color: item.color
+                                        )
+                                    }.buttonStyle(.plain)
                             }
                         }
                         .padding(16)
@@ -102,6 +104,22 @@ struct UserDashboardView: View {
         }
     }
 }
+
+@ViewBuilder
+    func destinationView(for title: String) -> some View {
+        switch title {
+        case "Our Teachers":
+            OurTeachersView()
+        case "My Batchmates":
+            Text("My Batchmates - Coming Soon")
+        case "Routine":
+            Text("Routine - Coming Soon")
+        case "Notices":
+            Text("Notices - Coming Soon")
+        default:
+            Text("Coming Soon")
+        }
+    }
 
 // Menu card component
 
