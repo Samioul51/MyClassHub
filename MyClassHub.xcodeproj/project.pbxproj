@@ -29,6 +29,7 @@
 		57E034AF2F6817EB00282168 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034AE2F6817EB00282168 /* LoadingView.swift */; };
 		57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B12F68197C00282168 /* AdminDashboardView.swift */; };
 		57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B42F6819A000282168 /* UserDashboardView.swift */; };
+		57E034B72F68262C00282168 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E034B62F68262C00282168 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		57E034AE2F6817EB00282168 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		57E034B12F68197C00282168 /* AdminDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardView.swift; sourceTree = "<group>"; };
 		57E034B42F6819A000282168 /* UserDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDashboardView.swift; sourceTree = "<group>"; };
+		57E034B62F68262C00282168 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				57E034B42F6819A000282168 /* UserDashboardView.swift */,
+				57E034B62F68262C00282168 /* SettingsView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
+				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
 				57E034A12F6814FD00282168 /* AuthService.swift in Sources */,
 				57E034AF2F6817EB00282168 /* LoadingView.swift in Sources */,
 			);

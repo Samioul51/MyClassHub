@@ -14,11 +14,14 @@ struct RootView: View {
         Group {
             if authViewModel.isLoading {
                 LoadingView()
-            } else if !authViewModel.isLoggedIn {
+            }
+            else if !authViewModel.isLoggedIn {
                 LoginView()
-            } else if authViewModel.isAdmin {
+            }
+            else if authViewModel.isAdmin {
                 AdminDashboardView()
-            } else {
+            }
+            else {
                 UserDashboardView()
             }
         }
