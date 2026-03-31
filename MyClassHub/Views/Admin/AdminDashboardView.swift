@@ -76,7 +76,7 @@ struct AdminDashboardView: View {
                                     subtitle: "Post Updates",
                                     icon: "bell.badge.fill",
                                     color: .orange,
-                                    destination: AnyView(Text("Notice Management"))
+                                    destination: AnyView(AdminNoticeView())
                                 )
                                 
                                 AdminGridCard(

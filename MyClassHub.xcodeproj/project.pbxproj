@@ -52,6 +52,11 @@
 		D838D8E12F7BFBEB0056A392 /* AdminRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8E02F7BFBEB0056A392 /* AdminRoutineViewModel.swift */; };
 		D838D8E72F7BFC670056A392 /* AdminRoutineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8E62F7BFC670056A392 /* AdminRoutineService.swift */; };
 		D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */; };
+		D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8EA2F7C1F560056A392 /* Notice.swift */; };
+		D838D8ED2F7C1F950056A392 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8EC2F7C1F950056A392 /* NoticeService.swift */; };
+		D838D8EF2F7C1FBF0056A392 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */; };
+		D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */; };
+		D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8F22F7C20320056A392 /* AdminNoticeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +121,13 @@
 		D838D8E02F7BFBEB0056A392 /* AdminRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRoutineViewModel.swift; sourceTree = "<group>"; };
 		D838D8E62F7BFC670056A392 /* AdminRoutineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRoutineService.swift; sourceTree = "<group>"; };
 		D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRoutineData.swift; sourceTree = "<group>"; };
+		D838D8EA2F7C1F560056A392 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		D838D8EC2F7C1F950056A392 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
+		D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
+		D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListView.swift; sourceTree = "<group>"; };
+		D838D8F22F7C20320056A392 /* AdminNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNoticeView.swift; sourceTree = "<group>"; };
+		D838D8F42F7C21AD0056A392 /* MyClassHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyClassHub.entitlements; sourceTree = "<group>"; };
+		D838D8F52F7C21BA0056A392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +183,8 @@
 		57D57C7C2F64239400C9A995 /* MyClassHub */ = {
 			isa = PBXGroup;
 			children = (
+				D838D8F52F7C21BA0056A392 /* Info.plist */,
+				D838D8F42F7C21AD0056A392 /* MyClassHub.entitlements */,
 				D838D8CE2F7BF1A20056A392 /* GoogleService-Info.plist */,
 				57E034A52F68162000282168 /* Views */,
 				57E034A22F6815B800282168 /* ViewModels */,
@@ -216,6 +230,7 @@
 				57E8B1002F683A1A000C4E1D /* Teacher.swift */,
 				57D6AA1D2F684A5C00B1D644 /* Batchmate.swift */,
 				D838D8D02F7BF5270056A392 /* Routine.swift */,
+				D838D8EA2F7C1F560056A392 /* Notice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +243,7 @@
 				57E8B1022F683A4B000C4E1D /* TeacherService.swift */,
 				57D6AA1F2F684A9A00B1D644 /* BatchmateService.swift */,
 				D838D8D22F7BF5560056A392 /* RoutineService.swift */,
+				D838D8EC2F7C1F950056A392 /* NoticeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -240,6 +256,7 @@
 				57E8B1042F683AC4000C4E1D /* TeacherViewModel.swift */,
 				57D6AA212F684B0F00B1D644 /* BatchmateViewModel.swift */,
 				D838D8D42F7BF57B0056A392 /* RoutineViewModel.swift */,
+				D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -280,6 +297,7 @@
 				D838D8DD2F7BFBA90056A392 /* Routine */,
 				57E034B12F68197C00282168 /* AdminDashboardView.swift */,
 				D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */,
+				D838D8F22F7C20320056A392 /* AdminNoticeView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -295,6 +313,7 @@
 				57E8B10A2F683BD9000C4E1D /* TeacherDetailView.swift */,
 				57D6AA232F684B4900B1D644 /* MyBatchmatesView.swift */,
 				57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */,
+				D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -498,11 +517,15 @@
 				57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */,
 				57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */,
 				D838D8E72F7BFC670056A392 /* AdminRoutineService.swift in Sources */,
+				D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */,
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
+				D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
 				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
+				D838D8ED2F7C1F950056A392 /* NoticeService.swift in Sources */,
 				D838D8D12F7BF5270056A392 /* Routine.swift in Sources */,
+				D838D8EF2F7C1FBF0056A392 /* NoticeViewModel.swift in Sources */,
 				57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */,
 				57E034A72F68163400282168 /* RootView.swift in Sources */,
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
@@ -513,6 +536,7 @@
 				57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
+				D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */,
 				D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
 				D838D8DF2F7BFBD50056A392 /* AdminRoutineView.swift in Sources */,
@@ -679,11 +703,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyClassHub/MyClassHub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyClassHub/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyClassHub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -707,11 +733,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyClassHub/MyClassHub.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyClassHub/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyClassHub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

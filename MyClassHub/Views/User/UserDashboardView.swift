@@ -9,186 +9,224 @@ import SwiftUI
 
 struct UserDashboardView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-
-    let menuItems: [(title: String, subtitle: String, icon: String, color: Color)] = [
-        ("My Batchmates", "See your classmates",  "person.2.fill",      .blue),
-        ("Routine",       "View class schedule",  "calendar",           .green),
-        ("Notices",       "Latest announcements", "bell.fill",          .orange),
-        ("Our Teachers",  "Faculty directory",    "graduationcap.fill", .purple)
+    
+    // Grid configuration for a balanced 2-column layout
+    let columns = [
+        GridItem(.flexible(), spacing: 16),
+        GridItem(.flexible(), spacing: 16)
     ]
 
     var body: some View {
         NavigationStack {
             ZStack {
+                // Background layer
                 Color(.systemGroupedBackground)
                     .ignoresSafeArea()
-
-                ScrollView {
-                    VStack(spacing: 0) {
-
-                        // Header card
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Welcome back,")
-                                .font(.subheadline)
-                                .foregroundColor(.white.opacity(0.8))
-                            Text(authViewModel.currentUser?.name ?? "Student")
-                                .font(.title.bold())
-                                .foregroundColor(.white)
-                            Text("Roll: \(authViewModel.currentUser?.roll ?? "-")")
-                                .font(.footnote)
-                                .foregroundColor(.white.opacity(0.7))
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(24)
-                        .background(
-                            LinearGradient(
-                                colors: [.blue, Color.blue.opacity(0.7)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
-
-                        // Main Menu Grid
-                        LazyVGrid(
-                            columns: [GridItem(.flexible()), GridItem(.flexible())],
-                            spacing: 16
-                        ) {
-                            ForEach(menuItems, id: \.title) { item in
-                                NavigationLink(destination: destinationView(for: item.title)) {
-                                        MenuCard(
-                                            title: item.title,
-                                            subtitle: item.subtitle,
-                                            icon: item.icon,
-                                            color: item.color
-                                        )
-                                    }.buttonStyle(.plain)
-                            }
-                        }
-                        .padding(16)
+                
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 28) {
                         
-                        // Action Rows Section (Admin & Settings)
-                        // Using a VStack with spacing to separate the cards
-                        VStack(spacing: 12) {
+                        // MARK: - Header Section
+                        headerSection
+                        
+                        // MARK: - Services Grid
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Academic Services")
+                                .font(.system(.headline, design: .rounded))
+                                .padding(.horizontal)
                             
-                            // Admin Dashboard Row
-                            if authViewModel.isAdmin {
+                            LazyVGrid(columns: columns, spacing: 16) {
+                                DashboardGridCard(
+                                    title: "Batchmates",
+                                    subtitle: "Class Directory",
+                                    icon: "person.2.fill",
+                                    color: .blue,
+                                    destination: AnyView(MyBatchmatesView())
+                                )
+                                
+                                DashboardGridCard(
+                                    title: "Routine",
+                                    subtitle: "Class Schedule",
+                                    icon: "calendar",
+                                    color: .indigo,
+                                    destination: AnyView(RoutineView())
+                                )
+                                
+                                DashboardGridCard(
+                                    title: "Notices",
+                                    subtitle: "Announcements",
+                                    icon: "bell.fill",
+                                    color: .orange,
+                                    destination: AnyView(NoticeListView())
+                                )
+                                
+                                DashboardGridCard(
+                                    title: "Teachers",
+                                    subtitle: "Faculty Info",
+                                    icon: "graduationcap.fill",
+                                    color: .purple,
+                                    destination: AnyView(OurTeachersView())
+                                )
+                            }
+                            .padding(.horizontal)
+                        }
+
+                        // MARK: - Admin Access (Conditional)
+                        if authViewModel.isAdmin {
+                            VStack(alignment: .leading, spacing: 12) {
+                                Text("System Administration")
+                                    .font(.system(.headline, design: .rounded))
+                                    .padding(.horizontal)
+                                
                                 NavigationLink(destination: AdminDashboardView()) {
-                                    HStack(spacing: 14) {
-                                        Image(systemName: "shield.fill")
-                                            .font(.system(size: 18))
-                                            .foregroundColor(.white)
-                                            .frame(width: 36, height: 36)
-                                            .background(Color.red)
-                                            .cornerRadius(10)
-
-                                        Text("Admin Dashboard")
-                                            .font(.body)
-                                            .foregroundColor(.primary)
-
+                                    HStack(spacing: 16) {
+                                        Image(systemName: "shield.lefthalf.filled")
+                                            .font(.title2)
+                                            .foregroundColor(.red)
+                                            .frame(width: 48, height: 48)
+                                            .background(Color.red.opacity(0.1))
+                                            .cornerRadius(12)
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text("Admin Control Center")
+                                                .font(.system(.body, design: .rounded, weight: .bold))
+                                            Text("Manage routine and faculty")
+                                                .font(.caption)
+                                                .foregroundColor(.secondary)
+                                        }
                                         Spacer()
-
                                         Image(systemName: "chevron.right")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
+                                            .font(.system(size: 12, weight: .bold))
+                                            .foregroundColor(.secondary.opacity(0.5))
                                     }
-                                    .padding(16)
+                                    .padding()
                                     .background(Color(.systemBackground))
-                                    .cornerRadius(14)
+                                    .cornerRadius(20)
+                                    .shadow(color: .black.opacity(0.03), radius: 5, x: 0, y: 2)
                                 }
                                 .buttonStyle(.plain)
+                                .padding(.horizontal)
                             }
+                        }
 
-                            // Settings Row
+                        // MARK: - Account Preferences
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Preferences")
+                                .font(.system(.headline, design: .rounded))
+                                .padding(.horizontal)
+                            
                             NavigationLink(destination: SettingsView()) {
-                                HStack(spacing: 14) {
-                                    Image(systemName: "gearshape.fill")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(.gray)
-                                        .frame(width: 36, height: 36)
-                                        .background(Color(.systemGray5))
-                                        .cornerRadius(10)
-
-                                    Text("Settings")
-                                        .font(.body)
-                                        .foregroundColor(.primary)
-
+                                HStack {
+                                    Label("App Settings", systemImage: "gearshape.fill")
+                                        .font(.system(.body, design: .rounded, weight: .medium))
                                     Spacer()
-
                                     Image(systemName: "chevron.right")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
+                                        .font(.system(size: 12, weight: .bold))
+                                        .foregroundColor(.secondary.opacity(0.5))
                                 }
-                                .padding(16)
+                                .padding()
                                 .background(Color(.systemBackground))
-                                .cornerRadius(14)
+                                .cornerRadius(16)
                             }
                             .buttonStyle(.plain)
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal, 16)
-
-                        Spacer(minLength: 32)
+                        
+                        Spacer(minLength: 40)
                     }
                 }
             }
-            .navigationTitle("MyClass Hub")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
         }
     }
+
+    // MARK: - Subviews
     
-    @ViewBuilder
-    func destinationView(for title: String) -> some View {
-        switch title {
-        case "Our Teachers":
-            OurTeachersView()
-        case "My Batchmates":
-            MyBatchmatesView()
-        case "Routine":
-            RoutineView()
-        case "Notices":
-            Text("Notices View")
-        default:
-            Text("Unknown View")
+    private var headerSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Top Status Row
+            HStack {
+                Text("STUDENT PROFILE")
+                    .font(.system(size: 10, weight: .black))
+                    .foregroundColor(.blue)
+                    .tracking(1.2)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(Color.blue.opacity(0.1))
+                    .clipShape(Capsule())
+                
+                Spacer()
+                
+                // Roll Number Pill
+                HStack(spacing: 6) {
+                    Text("ROLL")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundColor(.secondary)
+                    
+                    Text(authViewModel.currentUser?.roll ?? "-")
+                        .font(.system(size: 12, weight: .bold, design: .monospaced))
+                        .foregroundColor(.primary)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(
+                    Capsule()
+                        .strokeBorder(Color.primary.opacity(0.1), lineWidth: 1)
+                        .background(Color(.tertiarySystemGroupedBackground).clipShape(Capsule()))
+                )
+            }
+
+            // Greeting and Subtitle
+            VStack(alignment: .leading, spacing: 4) {
+                Text(authViewModel.currentUser?.name ?? "Student")
+                    .font(.system(size: 34, weight: .bold, design: .rounded))
+                    .foregroundColor(.primary)
+                
+                Text("Your academic overview and services.")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
         }
+        .padding(.horizontal)
+        .padding(.top, 20)
     }
 }
 
-// MARK: - Menu Card Component
-struct MenuCard: View {
+// MARK: - Reusable Components
+
+struct DashboardGridCard: View {
     let title: String
     let subtitle: String
     let icon: String
     let color: Color
-
+    let destination: AnyView
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 22))
-                .foregroundColor(color)
-                .frame(width: 44, height: 44)
-                .background(color.opacity(0.12))
-                .cornerRadius(12)
-
-            Spacer()
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-
-                Text(subtitle)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+        NavigationLink(destination: destination) {
+            VStack(alignment: .leading, spacing: 14) {
+                Image(systemName: icon)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundColor(color)
+                    .frame(width: 44, height: 44)
+                    .background(color.opacity(0.12))
+                    .cornerRadius(12)
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.system(.body, design: .rounded, weight: .bold))
+                        .foregroundColor(.primary)
+                    Text(subtitle)
+                        .font(.system(size: 12))
+                        .foregroundColor(.secondary)
+                }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+            .background(Color(.systemBackground))
+            .cornerRadius(20)
+            .shadow(color: .black.opacity(0.04), radius: 8, x: 0, y: 4)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .frame(height: 130)
-        .background(Color(.systemBackground))
-        .cornerRadius(16)
-        .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
+        .buttonStyle(PlainButtonStyle())
     }
 }
