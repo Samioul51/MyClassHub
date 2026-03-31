@@ -11,7 +11,7 @@ struct UserDashboardView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
 
     let menuItems: [(title: String, subtitle: String, icon: String, color: Color)] = [
-        ("My Batchmates", "See your classmates",  "person.2.fill",     .blue),
+        ("My Batchmates", "See your classmates",  "person.2.fill",      .blue),
         ("Routine",       "View class schedule",  "calendar",           .green),
         ("Notices",       "Latest announcements", "bell.fill",          .orange),
         ("Our Teachers",  "Faculty directory",    "graduationcap.fill", .purple)
@@ -27,7 +27,6 @@ struct UserDashboardView: View {
                     VStack(spacing: 0) {
 
                         // Header card
-                        
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Welcome back,")
                                 .font(.subheadline)
@@ -49,8 +48,7 @@ struct UserDashboardView: View {
                             )
                         )
 
-                        // Menu grid
-                        
+                        // Main Menu Grid
                         LazyVGrid(
                             columns: [GridItem(.flexible()), GridItem(.flexible())],
                             spacing: 16
@@ -67,33 +65,66 @@ struct UserDashboardView: View {
                             }
                         }
                         .padding(16)
-
-                        // Settings row
                         
-                        NavigationLink(destination: SettingsView()) {
-                            HStack(spacing: 14) {
-                                Image(systemName: "gearshape.fill")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(.gray)
-                                    .frame(width: 36, height: 36)
-                                    .background(Color(.systemGray5))
-                                    .cornerRadius(10)
+                        // Action Rows Section (Admin & Settings)
+                        // Using a VStack with spacing to separate the cards
+                        VStack(spacing: 12) {
+                            
+                            // Admin Dashboard Row
+                            if authViewModel.isAdmin {
+                                NavigationLink(destination: AdminDashboardView()) {
+                                    HStack(spacing: 14) {
+                                        Image(systemName: "shield.fill")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(.white)
+                                            .frame(width: 36, height: 36)
+                                            .background(Color.red)
+                                            .cornerRadius(10)
 
-                                Text("Settings")
-                                    .font(.body)
-                                    .foregroundColor(.primary)
+                                        Text("Admin Dashboard")
+                                            .font(.body)
+                                            .foregroundColor(.primary)
 
-                                Spacer()
+                                        Spacer()
 
-                                Image(systemName: "chevron.right")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
+                                        Image(systemName: "chevron.right")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    .padding(16)
+                                    .background(Color(.systemBackground))
+                                    .cornerRadius(14)
+                                }
+                                .buttonStyle(.plain)
                             }
-                            .padding(16)
-                            .background(Color(.systemBackground))
-                            .cornerRadius(14)
-                            .padding(.horizontal, 16)
+
+                            // Settings Row
+                            NavigationLink(destination: SettingsView()) {
+                                HStack(spacing: 14) {
+                                    Image(systemName: "gearshape.fill")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(.gray)
+                                        .frame(width: 36, height: 36)
+                                        .background(Color(.systemGray5))
+                                        .cornerRadius(10)
+
+                                    Text("Settings")
+                                        .font(.body)
+                                        .foregroundColor(.primary)
+
+                                    Spacer()
+
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding(16)
+                                .background(Color(.systemBackground))
+                                .cornerRadius(14)
+                            }
+                            .buttonStyle(.plain)
                         }
+                        .padding(.horizontal, 16)
 
                         Spacer(minLength: 32)
                     }
@@ -103,9 +134,8 @@ struct UserDashboardView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-}
-
-@ViewBuilder
+    
+    @ViewBuilder
     func destinationView(for title: String) -> some View {
         switch title {
         case "Our Teachers":
@@ -113,16 +143,16 @@ struct UserDashboardView: View {
         case "My Batchmates":
             MyBatchmatesView()
         case "Routine":
-            Text("Routine")
+            RoutineView()
         case "Notices":
-            Text("Notices")
+            Text("Notices View")
         default:
-            Text("default")
+            Text("Unknown View")
         }
     }
+}
 
-// Menu card component
-
+// MARK: - Menu Card Component
 struct MenuCard: View {
     let title: String
     let subtitle: String
