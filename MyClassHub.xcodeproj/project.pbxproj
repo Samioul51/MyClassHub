@@ -57,6 +57,8 @@
 		D838D8EF2F7C1FBF0056A392 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */; };
 		D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */; };
 		D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8F22F7C20320056A392 /* AdminNoticeView.swift */; };
+		D847DB042F7D66FD00564228 /* AdminNoticeManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */; };
+		D847DB072F7D685A00564228 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D847DB062F7D685A00564228 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,7 @@
 		D838D8F22F7C20320056A392 /* AdminNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNoticeView.swift; sourceTree = "<group>"; };
 		D838D8F42F7C21AD0056A392 /* MyClassHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyClassHub.entitlements; sourceTree = "<group>"; };
 		D838D8F52F7C21BA0056A392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNoticeManagementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D847DB072F7D685A00564228 /* FirebaseFirestoreSwift in Frameworks */,
 				57E034992F68133000282168 /* FirebaseMessaging in Frameworks */,
 				57E0349B2F68133000282168 /* FirebaseStorage in Frameworks */,
 				57E034952F68133000282168 /* FirebaseAuth in Frameworks */,
@@ -167,6 +171,7 @@
 				57D57C8D2F64239600C9A995 /* MyClassHubTests */,
 				57D57C972F64239600C9A995 /* MyClassHubUITests */,
 				57D57C7B2F64239400C9A995 /* Products */,
+				D847DB052F7D685A00564228 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +303,7 @@
 				57E034B12F68197C00282168 /* AdminDashboardView.swift */,
 				D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */,
 				D838D8F22F7C20320056A392 /* AdminNoticeView.swift */,
+				D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -368,6 +374,13 @@
 			path = Routine;
 			sourceTree = "<group>";
 		};
+		D847DB052F7D685A00564228 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,6 +402,7 @@
 				57E034962F68133000282168 /* FirebaseFirestore */,
 				57E034982F68133000282168 /* FirebaseMessaging */,
 				57E0349A2F68133000282168 /* FirebaseStorage */,
+				D847DB062F7D685A00564228 /* FirebaseFirestoreSwift */,
 			);
 			productName = MyClassHub;
 			productReference = 57D57C7A2F64239400C9A995 /* MyClassHub.app */;
@@ -514,6 +528,7 @@
 				57D6AA262F684B8700B1D644 /* BatchmateCardView.swift in Sources */,
 				57E034AA2F68175400282168 /* LoginView.swift in Sources */,
 				D838D8D52F7BF57B0056A392 /* RoutineViewModel.swift in Sources */,
+				D847DB042F7D66FD00564228 /* AdminNoticeManagementView.swift in Sources */,
 				57E034B52F6819A000282168 /* UserDashboardView.swift in Sources */,
 				57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */,
 				D838D8E72F7BFC670056A392 /* AdminRoutineService.swift in Sources */,
@@ -902,6 +917,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 57E034932F68133000282168 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		D847DB062F7D685A00564228 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57E034932F68133000282168 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

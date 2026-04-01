@@ -62,7 +62,6 @@ struct AdminDashboardView: View {
                                     destination: AnyView(AdminRoutineView())
                                 )
                                 
-                                // Uncomment as you build these views
                                 AdminGridCard(
                                     title: "Teachers",
                                     subtitle: "Manage Faculty",
@@ -73,10 +72,10 @@ struct AdminDashboardView: View {
                                 
                                 AdminGridCard(
                                     title: "Notices",
-                                    subtitle: "Post Updates",
+                                    subtitle: "Manage Updates",
                                     icon: "bell.badge.fill",
                                     color: .orange,
-                                    destination: AnyView(AdminNoticeView())
+                                    destination: AnyView(AdminNoticeManagementView())
                                 )
                                 
                                 AdminGridCard(
@@ -146,7 +145,7 @@ struct AdminDashboardView: View {
                     }
                 }
             }
-            .navigationBarHidden(true) // We use the custom header instead
+            .navigationBarHidden(true)
             .confirmationDialog(
                 "Logout",
                 isPresented: $showingLogoutConfirmation,

@@ -8,9 +8,10 @@
 import Foundation
 
 @MainActor
-class NoticeViewModel: ObservableObject {
+final class NoticeViewModel: ObservableObject {
     @Published var notices: [Notice] = []
     @Published var isLoading = false
+    
     private let service = NoticeService()
     
     init() {
@@ -19,14 +20,23 @@ class NoticeViewModel: ObservableObject {
     
     func fetchNotices() {
         isLoading = true
+        
         service.fetchNotices { [weak self] fetchedNotices in
-            self?.notices = fetchedNotices
-            self?.isLoading = false
+            guard let self = self else { return }
+            self.notices = fetchedNotices
+            self.isLoading = false
         }
     }
     
-    // Dynamically filter notices based on the UI selection
     func filteredNotices(for category: NoticeCategory) -> [Notice] {
-        return notices.filter { $0.category == category }
+        notices.filter { $0.category == category }
+    }
+    
+    func deleteNotice(_ notice: Notice) async {
+        do {
+            try await service.deleteNotice(notice)
+        } catch {
+            print("DEBUG: Failed to delete notice: \(error.localizedDescription)")
+        }
     }
 }
