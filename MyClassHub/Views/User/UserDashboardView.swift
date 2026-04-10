@@ -20,7 +20,8 @@ struct UserDashboardView: View {
         NavigationStack {
             ZStack {
                 // Background layer
-                Color(.systemGroupedBackground)
+                Image("background")
+                    .resizable()
                     .ignoresSafeArea()
                 
                 ScrollView(showsIndicators: false) {
@@ -34,6 +35,7 @@ struct UserDashboardView: View {
                             Text("Academic Services")
                                 .font(.system(.headline, design: .rounded))
                                 .padding(.horizontal)
+                                .foregroundColor(.white)
                             
                             LazyVGrid(columns: columns, spacing: 16) {
                                 DashboardGridCard(
@@ -77,6 +79,7 @@ struct UserDashboardView: View {
                                 Text("System Administration")
                                     .font(.system(.headline, design: .rounded))
                                     .padding(.horizontal)
+                                    .foregroundColor(.white)
                                 
                                 NavigationLink(destination: AdminDashboardView()) {
                                     HStack(spacing: 16) {
@@ -114,6 +117,7 @@ struct UserDashboardView: View {
                             Text("Preferences")
                                 .font(.system(.headline, design: .rounded))
                                 .padding(.horizontal)
+                                .foregroundColor(.white)
                             
                             NavigationLink(destination: SettingsView()) {
                                 HStack {
@@ -161,11 +165,11 @@ struct UserDashboardView: View {
                 HStack(spacing: 6) {
                     Text("ROLL")
                         .font(.system(size: 9, weight: .bold))
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.black)
                     
                     Text(authViewModel.currentUser?.roll ?? "-")
                         .font(.system(size: 12, weight: .bold, design: .monospaced))
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
@@ -180,11 +184,12 @@ struct UserDashboardView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(authViewModel.currentUser?.name ?? "Student")
                     .font(.system(size: 34, weight: .bold, design: .rounded))
-                    .foregroundColor(.primary)
+                    .foregroundColor(.white)
                 
                 Text("Your academic overview and services.")
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white)
+                    .fontWeight(.heavy)
             }
         }
         .padding(.horizontal)

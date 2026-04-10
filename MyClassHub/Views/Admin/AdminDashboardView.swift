@@ -20,7 +20,8 @@ struct AdminDashboardView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color(.systemGroupedBackground)
+                Image("background")
+                    .resizable()
                     .ignoresSafeArea()
                 
                 ScrollView {
@@ -39,10 +40,12 @@ struct AdminDashboardView: View {
                             
                             Text("Control Center")
                                 .font(.system(size: 34, weight: .bold, design: .rounded))
-                            
+                                .foregroundColor(.white)
                             Text("Manage schedules, faculty, and notices.")
                                 .font(.subheadline)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
+                                
                         }
                         .padding(.horizontal)
                         .padding(.top, 10)
@@ -52,6 +55,8 @@ struct AdminDashboardView: View {
                             Text("Content Management")
                                 .font(.headline)
                                 .padding(.horizontal)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
                             
                             LazyVGrid(columns: columns, spacing: 16) {
                                 AdminGridCard(
@@ -94,6 +99,8 @@ struct AdminDashboardView: View {
                             Text("User Experience")
                                 .font(.headline)
                                 .padding(.horizontal)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
                             
                             NavigationLink(destination: UserDashboardView()) {
                                 HStack {
@@ -122,23 +129,28 @@ struct AdminDashboardView: View {
                         }
                         
                         // MARK: - Danger Zone
-                        VStack(spacing: 12) {
-                            Button(role: .destructive) {
-                                showingLogoutConfirmation = true
-                            } label: {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("Preferences")
+                                .font(.system(.headline, design: .rounded))
+                                .padding(.horizontal)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
+                            
+                            NavigationLink(destination: SettingsView()) {
                                 HStack {
-                                    Image(systemName: "rectangle.portrait.and.arrow.right")
-                                    Text("Logout from System")
-                                        .fontWeight(.bold)
+                                    Label("App Settings", systemImage: "gearshape.fill")
+                                        .font(.system(.body, design: .rounded, weight: .medium))
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .font(.system(size: 12, weight: .bold))
+                                        .foregroundColor(.secondary.opacity(0.5))
                                 }
-                                .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color.red.opacity(0.1))
-                                .foregroundColor(.red)
+                                .background(Color(.systemBackground))
                                 .cornerRadius(16)
                             }
+                            .buttonStyle(.plain)
                             .padding(.horizontal)
-                            .padding(.top, 20)
                         }
                         
                         Spacer(minLength: 40)
