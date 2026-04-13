@@ -8,132 +8,167 @@
 import SwiftUI
 
 struct TeacherDetailView: View {
+    
     let teacher: Teacher
-
+    
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-
-                // Profile header
-                VStack(spacing: 12) {
-                    AsyncImage(url: URL(string: teacher.image)) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        case .failure, .empty:
-                            Image(systemName: "person.circle.fill")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 80))
-                        @unknown default:
-                            EmptyView()
-                        }
-                    }
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                    .background(Color(.systemGray5).clipShape(Circle()))
-
-                    Text(teacher.name)
-                        .font(.title2.bold())
-                        .multilineTextAlignment(.center)
-
-                    Text(teacher.designation)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(24)
-                .background(Color(.systemBackground))
-
-                // Contact info
+        
+        ZStack {
+            
+            // MARK: BACKGROUND
+            Color(hex: "#110e07")
+                .ignoresSafeArea()
+            
+            ScrollView {
                 
-                VStack(spacing: 0) {
-
-                    // Email
-                    Button {
-                        if let url = URL(string: "mailto:\(teacher.email)") {
-                            UIApplication.shared.open(url)
-                        }
-                    } label: {
-                        ContactRow(
-                            icon: "envelope.fill",
-                            color: .blue,
-                            title: "Email",
-                            value: teacher.email
-                        )
-                    }
-
-                    Divider().padding(.leading, 56)
-
-                    // Phone
+                VStack(spacing: 20) {
                     
-                    if let phone = teacher.phone {
+                    // MARK: PROFILE CARD
+                    VStack(spacing: 14) {
+                        
+                        AsyncImage(url: URL(string: teacher.image)) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                
+                            case .failure, .empty:
+                                Image(systemName: "person.circle.fill")
+                                    .font(.system(size: 60))
+                                    .foregroundColor(Color(hex: "#8dedec"))
+                                
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                        .frame(width: 110, height: 110)
+                        .clipShape(Circle())
+                        .background(Color(hex: "#1d1910"))
+                        .overlay(
+                            Circle()
+                                .stroke(Color(hex: "#8dedec").opacity(0.4), lineWidth: 2)
+                        )
+                        
+                        Text(teacher.name)
+                            .font(.system(size: 22, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                        
+                        Text(teacher.designation)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white.opacity(0.6))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(24)
+                    .background(Color(hex: "#16130b"))
+                    .cornerRadius(24)
+                    .padding(.horizontal)
+                    .padding(.top, 10)
+                    
+                    // MARK: CONTACT SECTION
+                    VStack(spacing: 1) {
+                        
+                        // EMAIL
                         Button {
-                            if let url = URL(string: "tel:\(phone)") {
+                            if let url = URL(string: "mailto:\(teacher.email)") {
                                 UIApplication.shared.open(url)
                             }
                         } label: {
                             ContactRow(
-                                icon: "phone.fill",
-                                color: .green,
-                                title: "Phone",
-                                value: phone
+                                icon: "envelope.fill",
+                                color: Color(hex: "#4dafaf"),
+                                title: "Email",
+                                value: teacher.email
                             )
                         }
-                    } else {
-                        ContactRow(
-                            icon: "phone.fill",
-                            color: .gray,
-                            title: "Phone",
-                            value: "Not available"
-                        )
-                        .opacity(0.5)
+                        
+                        Divider()
+                            .background(Color.white.opacity(0.08))
+                            .padding(.leading, 56)
+                        
+                        // PHONE
+                        if let phone = teacher.phone, !phone.isEmpty {
+                            Button {
+                                if let url = URL(string: "tel:\(phone)") {
+                                    UIApplication.shared.open(url)
+                                }
+                            } label: {
+                                ContactRow(
+                                    icon: "phone.fill",
+                                    color: Color(hex: "#91f78e"),
+                                    title: "Phone",
+                                    value: phone
+                                )
+                            }
+                        } else {
+                            ContactRow(
+                                icon: "phone.fill",
+                                color: .gray,
+                                title: "Phone",
+                                value: "Not available"
+                            )
+                            .opacity(0.5)
+                        }
                     }
+                    .background(Color(hex: "#16130b"))
+                    .cornerRadius(20)
+                    .padding(.horizontal)
+                    
+                    Spacer(minLength: 40)
                 }
-                .background(Color(.systemBackground))
-                .cornerRadius(12)
-                .padding(16)
             }
         }
-        .background(Color(.systemGroupedBackground))
         .navigationTitle(teacher.name)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(teacher.name)
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(hex: "#8dedec"))
+            }
+        }
     }
 }
 
 // Contact row
 struct ContactRow: View {
+    
     let icon: String
     let color: Color
     let title: String
     let value: String
-
+    
     var body: some View {
+        
         HStack(spacing: 14) {
+            
             Image(systemName: icon)
-                .font(.system(size: 15))
+                .font(.system(size: 14, weight: .bold))
                 .foregroundColor(.white)
-                .frame(width: 32, height: 32)
+                .frame(width: 34, height: 34)
                 .background(color)
-                .cornerRadius(8)
-
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            
             VStack(alignment: .leading, spacing: 2) {
+                
                 Text(title)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                    .font(.system(size: 11))
+                    .foregroundColor(.white.opacity(0.5))
+                
                 Text(value)
-                    .font(.system(size: 14))
-                    .foregroundColor(.primary)
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundColor(.white)
+                    .lineLimit(1)
             }
-
+            
             Spacer()
-
+            
             Image(systemName: "chevron.right")
-                .font(.caption)
-                .foregroundColor(.secondary)
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(.white.opacity(0.3))
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .padding(.vertical, 14)
     }
 }
