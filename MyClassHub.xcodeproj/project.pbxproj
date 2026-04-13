@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571A5D462F8D57C200D4C549 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D452F8D57C200D4C549 /* Color.swift */; };
 		57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7D2F89049500A1D753 /* NoticeComment.swift */; };
 		57341B802F89050F00A1D753 /* NoticeCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */; };
 		57341B822F89060700A1D753 /* NoticeCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		571A5D452F8D57C200D4C549 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		57341B7D2F89049500A1D753 /* NoticeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeComment.swift; sourceTree = "<group>"; };
 		57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentService.swift; sourceTree = "<group>"; };
 		57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				57D57C7F2F64239400C9A995 /* ContentView.swift */,
 				57D57C812F64239600C9A995 /* Assets.xcassets */,
 				57D57C832F64239600C9A995 /* Preview Content */,
+				571A5D452F8D57C200D4C549 /* Color.swift */,
 			);
 			path = MyClassHub;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
 				D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */,
+				571A5D462F8D57C200D4C549 /* Color.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
 				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
 				D838D8ED2F7C1F950056A392 /* NoticeService.swift in Sources */,

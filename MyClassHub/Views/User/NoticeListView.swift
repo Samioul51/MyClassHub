@@ -1,10 +1,3 @@
-//
-//  NoticeListView.swift
-//  MyClassHub
-//
-//  Created by Mridul on 31/3/26.
-//
-
 import SwiftUI
 
 struct NoticeListView: View {
@@ -12,238 +5,270 @@ struct NoticeListView: View {
     @State private var selectedCategory: NoticeCategory = .general
 
     var body: some View {
-        VStack(spacing: 0) {
-
-            // MARK: Category Selector
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(NoticeCategory.allCases, id: \.self) { cat in
-                        CategoryTabButton(
-                            title: cat.rawValue,
-                            isSelected: selectedCategory == cat
-                        ) {
-                            selectedCategory = cat
-                        }
-                    }
-                }
-                .padding()
-            }
-            .background(Color(.systemBackground))
-
-            // MARK: Notice List
-            ScrollView {
-                LazyVStack(spacing: 16) {
-                    let filtered = viewModel.filteredNotices(for: selectedCategory)
-
-                    if filtered.isEmpty {
-                        EmptyStateNoticeView(selectedCategory: selectedCategory.rawValue)
-                            .padding(.top, 100)
-                    } else {
-                        ForEach(filtered) { notice in
-                            NavigationLink(destination: NoticeDetailView(notice: notice)) {
-                                NoticeCardView(notice: notice)
+        ZStack {
+            
+            // MARK: BACKGROUND (ADMIN THEME)
+            Color(hex: "#110e07")
+                .ignoresSafeArea()
+            
+            VStack(spacing: 0) {
+                
+                // MARK: CATEGORY SELECTOR (DARK CHIPS)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        
+                        ForEach(NoticeCategory.allCases, id: \.self) { cat in
+                            
+                            Button(action: {
+                                selectedCategory = cat
+                            }) {
+                                Text(cat.rawValue)
+                                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                                    .foregroundColor(
+                                        selectedCategory == cat
+                                        ? Color(hex: "#110e07")
+                                        : .white.opacity(0.7)
+                                    )
+                                    .padding(.horizontal, 14)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        selectedCategory == cat
+                                        ? Color(hex: "#8dedec")
+                                        : Color(hex: "#16130b")
+                                    )
+                                    .cornerRadius(20)
                             }
-                            .buttonStyle(.plain)
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
                 }
-                .padding()
-            }
-            .background(Color(.systemGroupedBackground))
-            .refreshable {
-                viewModel.fetchNotices()
+                
+                Divider()
+                    .background(Color.white.opacity(0.1))
+                
+                // MARK: NOTICE LIST
+                ScrollView {
+                    
+                    LazyVStack(spacing: 14) {
+                        
+                        let filtered = viewModel.filteredNotices(for: selectedCategory)
+                        
+                        if filtered.isEmpty {
+                            
+                            EmptyStateNoticeView(selectedCategory: selectedCategory.rawValue)
+                                .padding(.top, 80)
+                            
+                        } else {
+                            
+                            ForEach(filtered) { notice in
+                                
+                                NavigationLink(destination: NoticeDetailView(notice: notice)) {
+                                    NoticeCardView(notice: notice)
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 12)
+                }
+                .refreshable {
+                    viewModel.fetchNotices()
+                }
             }
         }
         .navigationTitle("Bulletin Board")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Bulletin Board")
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(hex: "#8dedec"))
+            }
+        }
+        .task {
+            viewModel.fetchNotices()
+        }
     }
 }
+
+
 
 struct NoticeCardView: View {
     let notice: Notice
 
-    private var categoryColor: Color {
-        switch notice.category {
-        case .ct: return Color(red: 0.23, green: 0.51, blue: 0.96)
-        case .labTest: return Color(red: 0.39, green: 0.40, blue: 0.95)
-        case .quiz: return Color(red: 0.98, green: 0.45, blue: 0.09)
-        case .project: return Color(red: 0.66, green: 0.33, blue: 0.97)
-        case .viva: return Color(red: 0.13, green: 0.77, blue: 0.37)
-        case .general: return Color(.systemGray3)
-        }
-    }
-
-    private var displayTime: String {
-        extractOnlyTime(from: notice.time) ?? "TBA"
-    }
-
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 10) {
-
+            
             HStack {
+                
                 Label(notice.category.rawValue, systemImage: notice.category.icon)
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundColor(categoryColor)
-                    .padding(.horizontal, 11)
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundColor(Color(hex: "#8dedec"))
+                    .padding(.horizontal, 10)
                     .padding(.vertical, 4)
-                    .background(categoryColor.opacity(0.10))
-                    .clipShape(Capsule())
-
+                    .background(Color(hex: "#1d1910"))
+                    .cornerRadius(20)
+                
                 Spacer()
-
+                
                 Text(notice.date, style: .date)
                     .font(.system(size: 11, weight: .medium, design: .monospaced))
+                    .foregroundColor(.white.opacity(0.5))
             }
 
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 4) {
+                
                 Text(notice.title)
-                    .font(.system(size: 15, weight: .semibold))
-                    .lineLimit(2)
-
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                
                 Text(notice.description)
                     .font(.system(size: 13))
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.white.opacity(0.6))
                     .lineLimit(3)
-            }
-
-            if notice.category.isAssessment {
-                HStack(spacing: 8) {
-                    MetaChip(icon: "mappin.and.ellipse", text: notice.location ?? "TBA")
-                    MetaChip(icon: "clock", text: displayTime)
-                }
             }
         }
         .padding(16)
-        .background(Color(.systemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-
-    private func extractOnlyTime(from value: String?) -> String? {
-        guard let value else { return nil }
-        return value
+        .background(Color(hex: "#16130b"))
+        .cornerRadius(18)
     }
 }
 
+
 struct NoticeDetailView: View {
     let notice: Notice
-
+    
     @StateObject private var commentVM = NoticeCommentViewModel()
     @EnvironmentObject var authViewModel: AuthViewModel
-
-    private var categoryColor: Color {
-        switch notice.category {
-        case .ct: return Color(red: 0.23, green: 0.51, blue: 0.96)
-        case .labTest: return Color(red: 0.39, green: 0.40, blue: 0.95)
-        case .quiz: return Color(red: 0.98, green: 0.45, blue: 0.09)
-        case .project: return Color(red: 0.66, green: 0.33, blue: 0.97)
-        case .viva: return Color(red: 0.13, green: 0.77, blue: 0.37)
-        case .general: return Color(.systemGray3)
-        }
-    }
-
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-
-                // MARK: Main Notice Card
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack {
-                        Label(notice.category.rawValue, systemImage: notice.category.icon)
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundColor(categoryColor)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(categoryColor.opacity(0.10))
-                            .clipShape(Capsule())
-
-                        Spacer()
-
-                        Text(notice.date, style: .date)
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.secondary)
+        
+        ZStack {
+            
+            Color(hex: "#110e07")
+                .ignoresSafeArea()
+            
+            ScrollView {
+                
+                VStack(alignment: .leading, spacing: 18) {
+                    
+                    // MARK: MAIN CARD
+                    VStack(alignment: .leading, spacing: 12) {
+                        
+                        HStack {
+                            
+                            Label(notice.category.rawValue, systemImage: notice.category.icon)
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundColor(Color(hex: "#8dedec"))
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 4)
+                                .background(Color(hex: "#1d1910"))
+                                .cornerRadius(20)
+                            
+                            Spacer()
+                            
+                            Text(notice.date, style: .date)
+                                .font(.system(size: 12))
+                                .foregroundColor(.white.opacity(0.5))
+                        }
+                        
+                        Text(notice.title)
+                            .font(.system(size: 26, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                        
+                        Text(notice.description)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white.opacity(0.7))
+                            .lineSpacing(5)
                     }
-
-                    Text(notice.title)
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
-
-                    Text(notice.description)
-                        .foregroundColor(.secondary)
-                        .lineSpacing(5)
-                }
-                .padding(18)
-                .background(Color(.systemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-
-                // MARK: Comments Section
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("Comments")
-                        .font(.headline)
-
-                    if commentVM.comments.isEmpty {
-                        Text("No comments yet. Be the first to comment.")
-                            .foregroundColor(.secondary)
-                            .font(.subheadline)
-                    }
-
-                    ForEach(commentVM.comments) { comment in
-                        VStack(alignment: .leading, spacing: 6) {
-                            HStack {
-                                Text(comment.userName)
-                                    .fontWeight(.semibold)
-
-                                Spacer()
-
-                                Text(
-                                    comment.createdAt.formatted(
-                                        date: .abbreviated,
-                                        time: .shortened
+                    .padding(18)
+                    .background(Color(hex: "#16130b"))
+                    .cornerRadius(20)
+                    
+                    // MARK: COMMENTS
+                    VStack(alignment: .leading, spacing: 16) {
+                        
+                        Text("Comments")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(Color(hex: "#8dedec"))
+                        
+                        if commentVM.comments.isEmpty {
+                            
+                            Text("No comments yet.")
+                                .foregroundColor(.white.opacity(0.5))
+                        }
+                        
+                        ForEach(commentVM.comments) { comment in
+                            
+                            VStack(alignment: .leading, spacing: 6) {
+                                
+                                HStack {
+                                    
+                                    Text(comment.userName)
+                                        .font(.system(size: 14, weight: .semibold))
+                                        .foregroundColor(.white)
+                                    
+                                    Spacer()
+                                    
+                                    Text(comment.createdAt.formatted())
+                                        .font(.caption2)
+                                        .foregroundColor(.white.opacity(0.4))
+                                }
+                                
+                                Text(comment.text)
+                                    .foregroundColor(.white.opacity(0.7))
+                            }
+                            .padding()
+                            .background(Color(hex: "#16130b"))
+                            .cornerRadius(12)
+                        }
+                        
+                        // COMMENT INPUT
+                        HStack {
+                            
+                            TextField("Write comment...", text: $commentVM.newComment)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color(hex: "#1d1910"))
+                                .cornerRadius(12)
+                            
+                            Button("Send") {
+                                
+                                guard let id = notice.id else { return }
+                                
+                                Task {
+                                    await commentVM.addComment(
+                                        noticeId: id,
+                                        userId: authViewModel.currentUser?.id ?? "",
+                                        userName: authViewModel.currentUser?.name ?? "User"
                                     )
-                                )
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                                }
                             }
-
-                            Text(comment.text)
-                                .foregroundColor(.primary)
+                            .foregroundColor(Color(hex: "#8dedec"))
                         }
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(12)
                     }
-
-                    HStack {
-                        TextField("Write a comment...", text: $commentVM.newComment)
-                            .textFieldStyle(.roundedBorder)
-
-                        Button("Send") {
-                            guard let noticeId = notice.id else { return }
-
-                            Task {
-                                await commentVM.addComment(
-                                    noticeId: noticeId,
-                                    userId: authViewModel.currentUser?.id ?? "",
-                                    userName: authViewModel.currentUser?.name ?? "Anonymous"
-                                )
-                            }
-                        }
-                        .disabled(
-                            commentVM.newComment
-                                .trimmingCharacters(in: .whitespacesAndNewlines)
-                                .isEmpty
-                        )
-                    }
+                    .padding()
+                    .background(Color(hex: "#16130b"))
+                    .cornerRadius(20)
                 }
                 .padding()
-                .background(Color(.systemBackground))
-                .cornerRadius(20)
             }
-            .padding()
         }
-        .background(Color(.systemGroupedBackground))
         .navigationTitle("Notice")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Notice")
+                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .foregroundColor(Color(hex: "#8dedec"))
+            }
+        }
         .task {
-            guard let noticeId = notice.id else { return }
-            await commentVM.fetchComments(for: noticeId)
+            guard let id = notice.id else { return }
+            await commentVM.fetchComments(for: id)
         }
     }
 }
