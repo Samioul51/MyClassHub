@@ -138,11 +138,11 @@ struct AdminDashboardView: View {
                                 )
                                 
                                 AdminGridCard(
-                                    title: "Students",
+                                    title: "Batchmates",
                                     subtitle: "Roll Directory",
                                     icon: "person.2.fill",
                                     color: Color(hex: "#1d1910"),
-                                    destination: AnyView(Text("Student Management"))
+                                    destination: AnyView(AdminBatchmatesView())
                                 )
                             }
                             .padding(.horizontal)
