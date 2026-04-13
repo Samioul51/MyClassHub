@@ -146,44 +146,6 @@ struct AdminDashboardView: View {
                                 )
                             }
                             .padding(.horizontal)
-                            
-                            // CONFIG
-                            VStack(alignment: .leading, spacing: 16) {
-                                
-                                Text("CONFIGURATION")
-                                    .font(.system(size: 12, weight: .bold))
-                                    .foregroundColor(.white.opacity(0.4))
-                                    .tracking(2)
-                                    .padding(.horizontal)
-                                
-                                VStack(spacing: 1) {
-                                    
-                                    Button(action: {
-                                        authViewModel.switchToStudentMode()
-                                    }) {
-                                        ConfigRow(
-                                            icon: "eye.fill",
-                                            title: "Switch to Student View",
-                                            subtitle: "Preview the mobile experience"
-                                        )
-                                    }
-                                    
-                                    Button(action: {
-                                        showingLogoutConfirmation = true
-                                    }) {
-                                        ConfigRow(
-                                            icon: "gearshape.fill",
-                                            title: "App Settings",
-                                            subtitle: "Global system preferences"
-                                        )
-                                    }
-                                }
-                                .background(Color(hex: "#16130b"))
-                                .cornerRadius(24)
-                                .padding(.horizontal)
-                            }
-                            
-                            Spacer(minLength: 120)
                         }
                     }
                 }
@@ -288,33 +250,42 @@ struct ConfigRow: View {
 // MARK: BOTTOM BAR
 //
 struct BottomAdminBar: View {
+
+    @EnvironmentObject var authViewModel: AuthViewModel
+
     var body: some View {
         HStack {
             Spacer()
-            
-            NavigationLink(destination: AdminDashboardView()) {
-                BottomItem(icon: "shield.fill", title: "Admin")
+
+            // 🛡 Admin tab → only admin & admin-mode
+            if authViewModel.canAccessAdminPanel && !authViewModel.isShowingStudentView {
+                NavigationLink(destination: AdminDashboardView()) {
+                    BottomItem(icon: "shield.fill", title: "Admin")
+                }
+                Spacer()
             }
-            
-            Spacer()
-            
+
+            // Always visible
             NavigationLink(destination: UserDashboardView()) {
                 BottomItem(icon: "person.fill", title: "Student")
             }
-            
+
             Spacer()
-            
+
+            // Always visible
             NavigationLink(destination: SettingsView()) {
                 BottomItem(icon: "gearshape.fill", title: "Settings")
             }
-            
+
             Spacer()
         }
         .padding(.vertical, 12)
         .background(
-            LinearGradient(colors: [Color.teal, Color.green],
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
+            LinearGradient(
+                colors: [Color.teal, Color.green],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
         )
     }
 }
