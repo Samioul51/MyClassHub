@@ -22,4 +22,14 @@ class TeacherViewModel: ObservableObject {
         }
         isLoading = false
     }
+
+    // MARK: Admin delete
+    func deleteTeacher(id: String) async {
+        do {
+            try await TeacherService.shared.deleteTeacher(id: id)
+            await fetchTeachers()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 }

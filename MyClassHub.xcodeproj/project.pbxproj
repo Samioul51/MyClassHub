@@ -13,6 +13,9 @@
 		571A5D4C2F8D79AA00D4C549 /* EditBatchmateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */; };
 		571A5D502F8D7FB700D4C549 /* AddBatchmateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */; };
 		571A5D522F8D84F500D4C549 /* ImgBBUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */; };
+		571A5D542F8D92E100D4C549 /* AddTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D532F8D92E100D4C549 /* AddTeacherView.swift */; };
+		571A5D562F8D930B00D4C549 /* EditTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D552F8D930B00D4C549 /* EditTeacherView.swift */; };
+		571A5D582F8D932B00D4C549 /* AdminTeachersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */; };
 		57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7D2F89049500A1D753 /* NoticeComment.swift */; };
 		57341B802F89050F00A1D753 /* NoticeCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */; };
 		57341B822F89060700A1D753 /* NoticeCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */; };
@@ -94,6 +97,9 @@
 		571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBatchmateView.swift; sourceTree = "<group>"; };
 		571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBatchmateView.swift; sourceTree = "<group>"; };
 		571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgBBUploadService.swift; sourceTree = "<group>"; };
+		571A5D532F8D92E100D4C549 /* AddTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherView.swift; sourceTree = "<group>"; };
+		571A5D552F8D930B00D4C549 /* EditTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeacherView.swift; sourceTree = "<group>"; };
+		571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTeachersView.swift; sourceTree = "<group>"; };
 		57341B7D2F89049500A1D753 /* NoticeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeComment.swift; sourceTree = "<group>"; };
 		57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentService.swift; sourceTree = "<group>"; };
 		57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentViewModel.swift; sourceTree = "<group>"; };
@@ -330,6 +336,9 @@
 				571A5D492F8D797600D4C549 /* AdminBatchmateCard.swift */,
 				571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */,
 				571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */,
+				571A5D532F8D92E100D4C549 /* AddTeacherView.swift */,
+				571A5D552F8D930B00D4C549 /* EditTeacherView.swift */,
+				571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -561,11 +570,13 @@
 				57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */,
 				D838D8E72F7BFC670056A392 /* AdminRoutineService.swift in Sources */,
 				D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */,
+				571A5D562F8D930B00D4C549 /* EditTeacherView.swift in Sources */,
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
 				571A5D522F8D84F500D4C549 /* ImgBBUploadService.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
 				571A5D482F8D793000D4C549 /* AdminBatchmatesView.swift in Sources */,
 				D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */,
+				571A5D582F8D932B00D4C549 /* AdminTeachersView.swift in Sources */,
 				571A5D462F8D57C200D4C549 /* Color.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
 				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
@@ -589,6 +600,7 @@
 				D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */,
 				D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
+				571A5D542F8D92E100D4C549 /* AddTeacherView.swift in Sources */,
 				D838D8DF2F7BFBD50056A392 /* AdminRoutineView.swift in Sources */,
 				D838D8DC2F7BF6C20056A392 /* DayChip.swift in Sources */,
 				571A5D502F8D7FB700D4C549 /* AddBatchmateView.swift in Sources */,

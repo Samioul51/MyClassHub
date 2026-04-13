@@ -126,7 +126,7 @@ struct AdminDashboardView: View {
                                     subtitle: "Manage Faculty",
                                     icon: "person.fill",
                                     color: Color(hex: "#1d1910"),
-                                    destination: AnyView(Text("Teacher Management"))
+                                    destination: AnyView(AdminTeachersView())
                                 )
                                 
                                 AdminGridCard(
