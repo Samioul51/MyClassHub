@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		571A5D462F8D57C200D4C549 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D452F8D57C200D4C549 /* Color.swift */; };
+		571A5D482F8D793000D4C549 /* AdminBatchmatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D472F8D793000D4C549 /* AdminBatchmatesView.swift */; };
+		571A5D4A2F8D797600D4C549 /* AdminBatchmateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D492F8D797600D4C549 /* AdminBatchmateCard.swift */; };
+		571A5D4C2F8D79AA00D4C549 /* EditBatchmateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */; };
+		571A5D502F8D7FB700D4C549 /* AddBatchmateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */; };
+		571A5D522F8D84F500D4C549 /* ImgBBUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */; };
+		571A5D542F8D92E100D4C549 /* AddTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D532F8D92E100D4C549 /* AddTeacherView.swift */; };
+		571A5D562F8D930B00D4C549 /* EditTeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D552F8D930B00D4C549 /* EditTeacherView.swift */; };
+		571A5D582F8D932B00D4C549 /* AdminTeachersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */; };
+		571A5D5A2F8D978D00D4C549 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D592F8D978D00D4C549 /* UserService.swift */; };
+		571A5D5C2F8D97F400D4C549 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D5B2F8D97F400D4C549 /* UserViewModel.swift */; };
+		571A5D5E2F8D983100D4C549 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D5D2F8D983100D4C549 /* EditUserView.swift */; };
+		571A5D602F8D988400D4C549 /* AdminUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A5D5F2F8D988400D4C549 /* AdminUsersView.swift */; };
 		57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7D2F89049500A1D753 /* NoticeComment.swift */; };
 		57341B802F89050F00A1D753 /* NoticeCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */; };
 		57341B822F89060700A1D753 /* NoticeCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */; };
@@ -84,6 +96,18 @@
 
 /* Begin PBXFileReference section */
 		571A5D452F8D57C200D4C549 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		571A5D472F8D793000D4C549 /* AdminBatchmatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBatchmatesView.swift; sourceTree = "<group>"; };
+		571A5D492F8D797600D4C549 /* AdminBatchmateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBatchmateCard.swift; sourceTree = "<group>"; };
+		571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBatchmateView.swift; sourceTree = "<group>"; };
+		571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBatchmateView.swift; sourceTree = "<group>"; };
+		571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgBBUploadService.swift; sourceTree = "<group>"; };
+		571A5D532F8D92E100D4C549 /* AddTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeacherView.swift; sourceTree = "<group>"; };
+		571A5D552F8D930B00D4C549 /* EditTeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeacherView.swift; sourceTree = "<group>"; };
+		571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTeachersView.swift; sourceTree = "<group>"; };
+		571A5D592F8D978D00D4C549 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		571A5D5B2F8D97F400D4C549 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		571A5D5D2F8D983100D4C549 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		571A5D5F2F8D988400D4C549 /* AdminUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUsersView.swift; sourceTree = "<group>"; };
 		57341B7D2F89049500A1D753 /* NoticeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeComment.swift; sourceTree = "<group>"; };
 		57341B7F2F89050F00A1D753 /* NoticeCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentService.swift; sourceTree = "<group>"; };
 		57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCommentViewModel.swift; sourceTree = "<group>"; };
@@ -316,6 +340,14 @@
 				D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */,
 				D838D8F22F7C20320056A392 /* AdminNoticeView.swift */,
 				D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */,
+				571A5D472F8D793000D4C549 /* AdminBatchmatesView.swift */,
+				571A5D492F8D797600D4C549 /* AdminBatchmateCard.swift */,
+				571A5D4B2F8D79AA00D4C549 /* EditBatchmateView.swift */,
+				571A5D4F2F8D7FB700D4C549 /* AddBatchmateView.swift */,
+				571A5D532F8D92E100D4C549 /* AddTeacherView.swift */,
+				571A5D552F8D930B00D4C549 /* EditTeacherView.swift */,
+				571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */,
+				571A5D5D2F8D983100D4C549 /* EditUserView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -332,6 +364,7 @@
 				57D6AA232F684B4900B1D644 /* MyBatchmatesView.swift */,
 				57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */,
 				D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */,
+				571A5D5F2F8D988400D4C549 /* AdminUsersView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -358,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				D838D8E32F7BFC2E0056A392 /* Routine */,
+				571A5D5B2F8D97F400D4C549 /* UserViewModel.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -374,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				D838D8E52F7BFC4D0056A392 /* Routine */,
+				571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */,
+				571A5D592F8D978D00D4C549 /* UserService.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -535,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571A5D4C2F8D79AA00D4C549 /* EditBatchmateView.swift in Sources */,
 				57E8B1072F683B19000C4E1D /* OurTeachersView.swift in Sources */,
 				57E034A42F6815CF00282168 /* AuthViewModel.swift in Sources */,
 				57D6AA262F684B8700B1D644 /* BatchmateCardView.swift in Sources */,
@@ -545,9 +582,14 @@
 				57D6AA242F684B4900B1D644 /* MyBatchmatesView.swift in Sources */,
 				D838D8E72F7BFC670056A392 /* AdminRoutineService.swift in Sources */,
 				D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */,
+				571A5D562F8D930B00D4C549 /* EditTeacherView.swift in Sources */,
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
+				571A5D602F8D988400D4C549 /* AdminUsersView.swift in Sources */,
+				571A5D522F8D84F500D4C549 /* ImgBBUploadService.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
+				571A5D482F8D793000D4C549 /* AdminBatchmatesView.swift in Sources */,
 				D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */,
+				571A5D582F8D932B00D4C549 /* AdminTeachersView.swift in Sources */,
 				571A5D462F8D57C200D4C549 /* Color.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
 				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
@@ -555,6 +597,8 @@
 				57341B822F89060700A1D753 /* NoticeCommentViewModel.swift in Sources */,
 				D838D8D12F7BF5270056A392 /* Routine.swift in Sources */,
 				D838D8EF2F7C1FBF0056A392 /* NoticeViewModel.swift in Sources */,
+				571A5D5C2F8D97F400D4C549 /* UserViewModel.swift in Sources */,
+				571A5D5E2F8D983100D4C549 /* EditUserView.swift in Sources */,
 				57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */,
 				57E034A72F68163400282168 /* RootView.swift in Sources */,
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
@@ -562,16 +606,20 @@
 				57D6AA222F684B0F00B1D644 /* BatchmateViewModel.swift in Sources */,
 				57341B802F89050F00A1D753 /* NoticeCommentService.swift in Sources */,
 				D838D8E12F7BFBEB0056A392 /* AdminRoutineViewModel.swift in Sources */,
+				571A5D5A2F8D978D00D4C549 /* UserService.swift in Sources */,
 				D838D8DA2F7BF69B0056A392 /* ClassSlotCard.swift in Sources */,
 				57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
+				571A5D4A2F8D797600D4C549 /* AdminBatchmateCard.swift in Sources */,
 				57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
 				D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */,
 				D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
+				571A5D542F8D92E100D4C549 /* AddTeacherView.swift in Sources */,
 				D838D8DF2F7BFBD50056A392 /* AdminRoutineView.swift in Sources */,
 				D838D8DC2F7BF6C20056A392 /* DayChip.swift in Sources */,
+				571A5D502F8D7FB700D4C549 /* AddBatchmateView.swift in Sources */,
 				D838D8D32F7BF5560056A392 /* RoutineService.swift in Sources */,
 				57D6AA282F684BB800B1D644 /* BatchmateDetailView.swift in Sources */,
 				57E034A12F6814FD00282168 /* AuthService.swift in Sources */,

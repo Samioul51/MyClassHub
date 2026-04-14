@@ -29,3 +29,5 @@ Carthage/Build/
 
 # Firebase
 GoogleService-Info.plist
+
+info.plist

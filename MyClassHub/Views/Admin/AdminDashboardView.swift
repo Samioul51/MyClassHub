@@ -126,7 +126,7 @@ struct AdminDashboardView: View {
                                     subtitle: "Manage Faculty",
                                     icon: "person.fill",
                                     color: Color(hex: "#1d1910"),
-                                    destination: AnyView(Text("Teacher Management"))
+                                    destination: AnyView(AdminTeachersView())
                                 )
                                 
                                 AdminGridCard(
@@ -138,14 +138,23 @@ struct AdminDashboardView: View {
                                 )
                                 
                                 AdminGridCard(
-                                    title: "Students",
+                                    title: "Batchmates",
                                     subtitle: "Roll Directory",
                                     icon: "person.2.fill",
                                     color: Color(hex: "#1d1910"),
-                                    destination: AnyView(Text("Student Management"))
+                                    destination: AnyView(AdminBatchmatesView())
+                                )
+                                
+                                AdminGridCard(
+                                    title: "Users",
+                                    subtitle: "Manage Members",
+                                    icon: "person.3.fill",
+                                    color: Color(hex: "#1d1910"),
+                                    destination: AnyView(AdminUsersView())
                                 )
                             }
                             .padding(.horizontal)
+                            Spacer().frame(height: 90)
                         }
                     }
                 }
@@ -171,7 +180,7 @@ struct AdminDashboardView: View {
 }
 
 //
-// MARK: GRID CARD (FIXED NAVIGATION)
+// GRID CARD (FIXED NAVIGATION)
 //
 struct AdminGridCard: View {
     let title: String
@@ -211,7 +220,7 @@ struct AdminGridCard: View {
 }
 
 //
-// MARK: CONFIG ROW
+// CONFIG ROW
 //
 struct ConfigRow: View {
     let icon: String
@@ -247,7 +256,7 @@ struct ConfigRow: View {
 }
 
 //
-// MARK: BOTTOM BAR
+// BOTTOM BAR
 //
 struct BottomAdminBar: View {
 
@@ -257,7 +266,7 @@ struct BottomAdminBar: View {
         HStack {
             Spacer()
 
-            // 🛡 Admin tab → only admin & admin-mode
+            // Admin tab
             if authViewModel.canAccessAdminPanel && !authViewModel.isShowingStudentView {
                 NavigationLink(destination: AdminDashboardView()) {
                     BottomItem(icon: "shield.fill", title: "Admin")

@@ -15,7 +15,6 @@ class TeacherService {
         let snapshot = try await db.collection("teachers")
             .order(by: "name")
             .getDocuments()
-
         return snapshot.documents.map { doc in
             let data = doc.data()
             return Teacher(
@@ -27,5 +26,32 @@ class TeacherService {
                 phone: data["phone"] as? String
             )
         }
+    }
+
+    // MARK: Admin add
+    func addTeacher(_ teacher: Teacher) async throws {
+        try await db.collection("teachers").document(teacher.id).setData([
+            "name": teacher.name,
+            "designation": teacher.designation,
+            "email": teacher.email,
+            "image": teacher.image,
+            "phone": teacher.phone ?? ""
+        ])
+    }
+
+    // MARK: Admin update
+    func updateTeacher(_ teacher: Teacher) async throws {
+        try await db.collection("teachers").document(teacher.id).updateData([
+            "name": teacher.name,
+            "designation": teacher.designation,
+            "email": teacher.email,
+            "image": teacher.image,
+            "phone": teacher.phone ?? ""
+        ])
+    }
+
+    // MARK: Admin delete
+    func deleteTeacher(id: String) async throws {
+        try await db.collection("teachers").document(id).delete()
     }
 }
