@@ -89,6 +89,8 @@
 		D896FE3F2F918D4800856161 /* MailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE3E2F918D4800856161 /* MailDetailView.swift */; };
 		D896FE422F918EB900856161 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D896FE412F918EB900856161 /* GoogleSignIn */; };
 		D896FE442F918EB900856161 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D896FE432F918EB900856161 /* GoogleSignInSwift */; };
+		D896FE462F919C3000856161 /* UserMailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE452F919C3000856161 /* UserMailViewModel.swift */; };
+		D896FE482F919C5500856161 /* UserMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE472F919C5500856161 /* UserMailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +191,8 @@
 		D896FE3A2F918D1400856161 /* MailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailListView.swift; sourceTree = "<group>"; };
 		D896FE3C2F918D3000856161 /* MailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRowView.swift; sourceTree = "<group>"; };
 		D896FE3E2F918D4800856161 /* MailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailDetailView.swift; sourceTree = "<group>"; };
+		D896FE452F919C3000856161 /* UserMailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMailViewModel.swift; sourceTree = "<group>"; };
+		D896FE472F919C5500856161 /* UserMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +331,7 @@
 				D838D8D42F7BF57B0056A392 /* RoutineViewModel.swift */,
 				D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */,
 				57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */,
+				D896FE452F919C3000856161 /* UserMailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */,
 				D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */,
 				571A5D5F2F8D988400D4C549 /* AdminUsersView.swift */,
+				D896FE472F919C5500856161 /* UserMailView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -659,10 +665,12 @@
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				571A5D4A2F8D797600D4C549 /* AdminBatchmateCard.swift in Sources */,
 				D896FE3F2F918D4800856161 /* MailDetailView.swift in Sources */,
+				D896FE462F919C3000856161 /* UserMailViewModel.swift in Sources */,
 				57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
 				D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */,
 				D896FE292F918BE700856161 /* MailMessage.swift in Sources */,
+				D896FE482F919C5500856161 /* UserMailView.swift in Sources */,
 				D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
 				D896FE2F2F918C4D00856161 /* AdminMailViewModel.swift in Sources */,

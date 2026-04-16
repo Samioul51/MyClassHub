@@ -1,5 +1,5 @@
 //
-//  AdminMailView.swift
+//  UserMailView.swift
 //  MyClassHub
 //
 //  Created by AI on 17/4/26.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct AdminMailView: View {
-    @StateObject private var viewModel = AdminMailViewModel()
+struct UserMailView: View {
+    @StateObject private var viewModel = UserMailViewModel()
     @Environment(\.dismiss) var dismiss
 
     var body: some View {

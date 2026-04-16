@@ -11,9 +11,13 @@ import GoogleSignIn
 
 class GmailAuthService: ObservableObject {
 
-    private let tokenKey = "gmail_access_token"
-    private let emailKey = "gmail_connected_email"
+    private let tokenKey: String
+    private let emailKey: String
 
+    init(role: String = "user") {
+        self.tokenKey = "\(role)_gmail_access_token"
+        self.emailKey = "\(role)_gmail_connected_email"
+    }
     // MARK: - Stored Credentials
 
     var storedAccessToken: String? {

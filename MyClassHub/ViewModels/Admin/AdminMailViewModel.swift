@@ -18,7 +18,7 @@ class AdminMailViewModel: ObservableObject {
     @Published var isLoading      = false
     @Published var errorMessage: String?
 
-    private let authService  = GmailAuthService()
+    private let authService  = GmailAuthService(role: "admin")
     private let fetchService = GmailFetchService()
 
     // MARK: - Init
