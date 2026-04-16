@@ -7,20 +7,24 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 @main
 struct MyClassHubApp: App {
-    
+
     init() {
         FirebaseApp.configure()
     }
-    
+
     @StateObject private var authViewModel = AuthViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environmentObject(authViewModel)
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
+                }
         }
     }
 }
