@@ -35,7 +35,7 @@ final class ImgBBUploadService {
             throw URLError(.cannotDecodeContentData)
         }
 
-        print("📤 Uploading image — size: \(data.count / 1024) KB")
+        print("Uploading image — size: \(data.count / 1024) KB")
 
         let url = URL(string: "https://api.imgbb.com/1/upload?key=\(apiKey)")!
         var req = URLRequest(url: url)
@@ -56,7 +56,7 @@ final class ImgBBUploadService {
 
         // Check HTTP status
         if let httpResponse = response as? HTTPURLResponse {
-            print("📥 ImgBB response status: \(httpResponse.statusCode)")
+            print("ImgBB response status: \(httpResponse.statusCode)")
             guard httpResponse.statusCode == 200 else {
                 throw NSError(
                     domain: "ImgBB",
@@ -75,7 +75,7 @@ final class ImgBBUploadService {
             )
         }
 
-        print("📦 ImgBB JSON: \(json)")
+        print("ImgBB JSON: \(json)")
 
         guard
             let success = json["success"] as? Bool, success,
@@ -91,11 +91,11 @@ final class ImgBBUploadService {
             )
         }
 
-        print("✅ Upload successful: \(imageUrl)")
+        print("Upload successful: \(imageUrl)")
         return imageUrl
     }
 
-    // MARK: Resize helper
+    // Resize helper
     private func resizeImage(_ image: UIImage, maxDimension: CGFloat) -> UIImage {
         let size = image.size
         let largerSide = max(size.width, size.height)
