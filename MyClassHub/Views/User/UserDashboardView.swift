@@ -153,6 +153,14 @@ struct UserDashboardView: View {
                                     color: Color(hex: "#8dedec"),
                                     destination: AnyView(OurTeachersView())
                                 )
+                                
+                                AdminGridCard(
+                                        title: "Mail",
+                                        subtitle: "University Email",
+                                        icon: "envelope.fill",
+                                        color: Color(hex: "#1d1910"),
+                                        destination: AnyView(UserMailView())
+                                    )
                             }
                             .padding(.horizontal)
                         }

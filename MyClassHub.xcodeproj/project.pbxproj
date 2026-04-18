@@ -75,6 +75,22 @@
 		D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838D8F22F7C20320056A392 /* AdminNoticeView.swift */; };
 		D847DB042F7D66FD00564228 /* AdminNoticeManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */; };
 		D847DB072F7D685A00564228 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D847DB062F7D685A00564228 /* FirebaseFirestoreSwift */; };
+		D896FE292F918BE700856161 /* MailMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE282F918BE700856161 /* MailMessage.swift */; };
+		D896FE2B2F918C0A00856161 /* GmailAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE2A2F918C0A00856161 /* GmailAuthService.swift */; };
+		D896FE2D2F918C2600856161 /* GmailFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE2C2F918C2600856161 /* GmailFetchService.swift */; };
+		D896FE2F2F918C4D00856161 /* AdminMailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE2E2F918C4D00856161 /* AdminMailViewModel.swift */; };
+		D896FE312F918C7400856161 /* AdminMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE302F918C7400856161 /* AdminMailView.swift */; };
+		D896FE332F918C9300856161 /* MailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE322F918C9300856161 /* MailHeaderView.swift */; };
+		D896FE352F918CAD00856161 /* ConnectMailBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE342F918CAD00856161 /* ConnectMailBannerView.swift */; };
+		D896FE372F918CCB00856161 /* MailTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE362F918CCB00856161 /* MailTabBarView.swift */; };
+		D896FE392F918CE300856161 /* MailStatsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE382F918CE300856161 /* MailStatsRowView.swift */; };
+		D896FE3B2F918D1400856161 /* MailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE3A2F918D1400856161 /* MailListView.swift */; };
+		D896FE3D2F918D3000856161 /* MailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE3C2F918D3000856161 /* MailRowView.swift */; };
+		D896FE3F2F918D4800856161 /* MailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE3E2F918D4800856161 /* MailDetailView.swift */; };
+		D896FE422F918EB900856161 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D896FE412F918EB900856161 /* GoogleSignIn */; };
+		D896FE442F918EB900856161 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D896FE432F918EB900856161 /* GoogleSignInSwift */; };
+		D896FE462F919C3000856161 /* UserMailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE452F919C3000856161 /* UserMailViewModel.swift */; };
+		D896FE482F919C5500856161 /* UserMailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D896FE472F919C5500856161 /* UserMailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +179,20 @@
 		D838D8F42F7C21AD0056A392 /* MyClassHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyClassHub.entitlements; sourceTree = "<group>"; };
 		D838D8F52F7C21BA0056A392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D847DB032F7D66FD00564228 /* AdminNoticeManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNoticeManagementView.swift; sourceTree = "<group>"; };
+		D896FE282F918BE700856161 /* MailMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailMessage.swift; sourceTree = "<group>"; };
+		D896FE2A2F918C0A00856161 /* GmailAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailAuthService.swift; sourceTree = "<group>"; };
+		D896FE2C2F918C2600856161 /* GmailFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailFetchService.swift; sourceTree = "<group>"; };
+		D896FE2E2F918C4D00856161 /* AdminMailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMailViewModel.swift; sourceTree = "<group>"; };
+		D896FE302F918C7400856161 /* AdminMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMailView.swift; sourceTree = "<group>"; };
+		D896FE322F918C9300856161 /* MailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailHeaderView.swift; sourceTree = "<group>"; };
+		D896FE342F918CAD00856161 /* ConnectMailBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectMailBannerView.swift; sourceTree = "<group>"; };
+		D896FE362F918CCB00856161 /* MailTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTabBarView.swift; sourceTree = "<group>"; };
+		D896FE382F918CE300856161 /* MailStatsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailStatsRowView.swift; sourceTree = "<group>"; };
+		D896FE3A2F918D1400856161 /* MailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailListView.swift; sourceTree = "<group>"; };
+		D896FE3C2F918D3000856161 /* MailRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailRowView.swift; sourceTree = "<group>"; };
+		D896FE3E2F918D4800856161 /* MailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailDetailView.swift; sourceTree = "<group>"; };
+		D896FE452F919C3000856161 /* UserMailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMailViewModel.swift; sourceTree = "<group>"; };
+		D896FE472F919C5500856161 /* UserMailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +202,11 @@
 			files = (
 				D847DB072F7D685A00564228 /* FirebaseFirestoreSwift in Frameworks */,
 				57E034992F68133000282168 /* FirebaseMessaging in Frameworks */,
+				D896FE442F918EB900856161 /* GoogleSignInSwift in Frameworks */,
 				57E0349B2F68133000282168 /* FirebaseStorage in Frameworks */,
 				57E034952F68133000282168 /* FirebaseAuth in Frameworks */,
 				57E034972F68133000282168 /* FirebaseFirestore in Frameworks */,
+				D896FE422F918EB900856161 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +302,7 @@
 				D838D8D02F7BF5270056A392 /* Routine.swift */,
 				D838D8EA2F7C1F560056A392 /* Notice.swift */,
 				57341B7D2F89049500A1D753 /* NoticeComment.swift */,
+				D896FE282F918BE700856161 /* MailMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +331,7 @@
 				D838D8D42F7BF57B0056A392 /* RoutineViewModel.swift */,
 				D838D8EE2F7C1FBF0056A392 /* NoticeViewModel.swift */,
 				57341B812F89060700A1D753 /* NoticeCommentViewModel.swift */,
+				D896FE452F919C3000856161 /* UserMailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -336,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				D838D8DD2F7BFBA90056A392 /* Routine */,
+				D896FE382F918CE300856161 /* MailStatsRowView.swift */,
 				57E034B12F68197C00282168 /* AdminDashboardView.swift */,
 				D838D8E82F7BFD210056A392 /* PDFRoutineData.swift */,
 				D838D8F22F7C20320056A392 /* AdminNoticeView.swift */,
@@ -348,6 +383,13 @@
 				571A5D552F8D930B00D4C549 /* EditTeacherView.swift */,
 				571A5D572F8D932B00D4C549 /* AdminTeachersView.swift */,
 				571A5D5D2F8D983100D4C549 /* EditUserView.swift */,
+				D896FE302F918C7400856161 /* AdminMailView.swift */,
+				D896FE322F918C9300856161 /* MailHeaderView.swift */,
+				D896FE342F918CAD00856161 /* ConnectMailBannerView.swift */,
+				D896FE362F918CCB00856161 /* MailTabBarView.swift */,
+				D896FE3A2F918D1400856161 /* MailListView.swift */,
+				D896FE3C2F918D3000856161 /* MailRowView.swift */,
+				D896FE3E2F918D4800856161 /* MailDetailView.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -365,6 +407,7 @@
 				57D6AA272F684BB800B1D644 /* BatchmateDetailView.swift */,
 				D838D8F02F7C1FFF0056A392 /* NoticeListView.swift */,
 				571A5D5F2F8D988400D4C549 /* AdminUsersView.swift */,
+				D896FE472F919C5500856161 /* UserMailView.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -392,6 +435,7 @@
 			children = (
 				D838D8E32F7BFC2E0056A392 /* Routine */,
 				571A5D5B2F8D97F400D4C549 /* UserViewModel.swift */,
+				D896FE2E2F918C4D00856161 /* AdminMailViewModel.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -410,6 +454,8 @@
 				D838D8E52F7BFC4D0056A392 /* Routine */,
 				571A5D512F8D84F500D4C549 /* ImgBBUploadService.swift */,
 				571A5D592F8D978D00D4C549 /* UserService.swift */,
+				D896FE2A2F918C0A00856161 /* GmailAuthService.swift */,
+				D896FE2C2F918C2600856161 /* GmailFetchService.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -451,6 +497,8 @@
 				57E034982F68133000282168 /* FirebaseMessaging */,
 				57E0349A2F68133000282168 /* FirebaseStorage */,
 				D847DB062F7D685A00564228 /* FirebaseFirestoreSwift */,
+				D896FE412F918EB900856161 /* GoogleSignIn */,
+				D896FE432F918EB900856161 /* GoogleSignInSwift */,
 			);
 			productName = MyClassHub;
 			productReference = 57D57C7A2F64239400C9A995 /* MyClassHub.app */;
@@ -526,6 +574,7 @@
 			mainGroup = 57D57C712F64239400C9A995;
 			packageReferences = (
 				57E034932F68133000282168 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D896FE402F918EB900856161 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 57D57C7B2F64239400C9A995 /* Products */;
 			projectDirPath = "";
@@ -584,6 +633,7 @@
 				D838D8F32F7C20320056A392 /* AdminNoticeView.swift in Sources */,
 				571A5D562F8D930B00D4C549 /* EditTeacherView.swift in Sources */,
 				57E8B1092F683B91000C4E1D /* TeacherRowView.swift in Sources */,
+				D896FE3B2F918D1400856161 /* MailListView.swift in Sources */,
 				571A5D602F8D988400D4C549 /* AdminUsersView.swift in Sources */,
 				571A5D522F8D84F500D4C549 /* ImgBBUploadService.swift in Sources */,
 				57D57C802F64239400C9A995 /* ContentView.swift in Sources */,
@@ -591,6 +641,7 @@
 				D838D8EB2F7C1F560056A392 /* Notice.swift in Sources */,
 				571A5D582F8D932B00D4C549 /* AdminTeachersView.swift in Sources */,
 				571A5D462F8D57C200D4C549 /* Color.swift in Sources */,
+				D896FE352F918CAD00856161 /* ConnectMailBannerView.swift in Sources */,
 				57E8B1052F683AC4000C4E1D /* TeacherViewModel.swift in Sources */,
 				57E8B1012F683A1A000C4E1D /* Teacher.swift in Sources */,
 				D838D8ED2F7C1F950056A392 /* NoticeService.swift in Sources */,
@@ -600,8 +651,10 @@
 				571A5D5C2F8D97F400D4C549 /* UserViewModel.swift in Sources */,
 				571A5D5E2F8D983100D4C549 /* EditUserView.swift in Sources */,
 				57E034B22F68197C00282168 /* AdminDashboardView.swift in Sources */,
+				D896FE2D2F918C2600856161 /* GmailFetchService.swift in Sources */,
 				57E034A72F68163400282168 /* RootView.swift in Sources */,
 				57D57C7E2F64239400C9A995 /* MyClassHubApp.swift in Sources */,
+				D896FE392F918CE300856161 /* MailStatsRowView.swift in Sources */,
 				57D6AA202F684A9A00B1D644 /* BatchmateService.swift in Sources */,
 				57D6AA222F684B0F00B1D644 /* BatchmateViewModel.swift in Sources */,
 				57341B802F89050F00A1D753 /* NoticeCommentService.swift in Sources */,
@@ -611,22 +664,32 @@
 				57E8B1032F683A4B000C4E1D /* TeacherService.swift in Sources */,
 				57E034AC2F6817AD00282168 /* RegisterView.swift in Sources */,
 				571A5D4A2F8D797600D4C549 /* AdminBatchmateCard.swift in Sources */,
+				D896FE3F2F918D4800856161 /* MailDetailView.swift in Sources */,
+				D896FE462F919C3000856161 /* UserMailViewModel.swift in Sources */,
 				57341B7E2F89049500A1D753 /* NoticeComment.swift in Sources */,
 				57E0349E2F6814C900282168 /* User.swift in Sources */,
 				D838D8F12F7C1FFF0056A392 /* NoticeListView.swift in Sources */,
+				D896FE292F918BE700856161 /* MailMessage.swift in Sources */,
+				D896FE482F919C5500856161 /* UserMailView.swift in Sources */,
 				D838D8E92F7BFD210056A392 /* PDFRoutineData.swift in Sources */,
 				57E034B72F68262C00282168 /* SettingsView.swift in Sources */,
+				D896FE2F2F918C4D00856161 /* AdminMailViewModel.swift in Sources */,
 				571A5D542F8D92E100D4C549 /* AddTeacherView.swift in Sources */,
 				D838D8DF2F7BFBD50056A392 /* AdminRoutineView.swift in Sources */,
+				D896FE2B2F918C0A00856161 /* GmailAuthService.swift in Sources */,
+				D896FE312F918C7400856161 /* AdminMailView.swift in Sources */,
+				D896FE332F918C9300856161 /* MailHeaderView.swift in Sources */,
 				D838D8DC2F7BF6C20056A392 /* DayChip.swift in Sources */,
 				571A5D502F8D7FB700D4C549 /* AddBatchmateView.swift in Sources */,
 				D838D8D32F7BF5560056A392 /* RoutineService.swift in Sources */,
+				D896FE372F918CCB00856161 /* MailTabBarView.swift in Sources */,
 				57D6AA282F684BB800B1D644 /* BatchmateDetailView.swift in Sources */,
 				57E034A12F6814FD00282168 /* AuthService.swift in Sources */,
 				57D6AA1E2F684A5C00B1D644 /* Batchmate.swift in Sources */,
 				D838D8D72F7BF5A10056A392 /* RoutineView.swift in Sources */,
 				57E8B10B2F683BD9000C4E1D /* TeacherDetailView.swift in Sources */,
 				57E034AF2F6817EB00282168 /* LoadingView.swift in Sources */,
+				D896FE3D2F918D3000856161 /* MailRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +1022,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		D896FE402F918EB900856161 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -986,6 +1057,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 57E034932F68133000282168 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		D896FE412F918EB900856161 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D896FE402F918EB900856161 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		D896FE432F918EB900856161 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D896FE402F918EB900856161 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
